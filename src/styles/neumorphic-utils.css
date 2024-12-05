@@ -1,0 +1,23 @@
+.neu-flat {
+  @apply bg-background shadow-[6px_6px_12px_hsl(var(--neu-shadow-1)),_-6px_-6px_12px_hsl(var(--neu-shadow-2))];
+}
+
+.neu-pressed {
+  @apply bg-background shadow-[inset_6px_6px_12px_hsl(var(--neu-shadow-1)),_inset_-6px_-6px_12px_hsl(var(--neu-shadow-2))];
+}
+
+.neu-concave {
+  @apply bg-gradient-to-br from-[hsl(var(--neu-shadow-2))] to-[hsl(var(--neu-shadow-1))] shadow-[6px_6px_12px_hsl(var(--neu-shadow-1)),_-6px_-6px_12px_hsl(var(--neu-shadow-2))];
+}
+
+.neu-convex {
+  @apply bg-gradient-to-br from-[hsl(var(--neu-shadow-1))] to-[hsl(var(--neu-shadow-2))] shadow-[6px_6px_12px_hsl(var(--neu-shadow-1)),_-6px_-6px_12px_hsl(var(--neu-shadow-2))];
+}
+
+.neu-flat-sm {
+  @apply bg-background shadow-[3px_3px_6px_hsl(var(--neu-shadow-1)),_-3px_-3px_6px_hsl(var(--neu-shadow-2))];
+}
+
+.neu-pressed-sm {
+  @apply bg-background shadow-[inset_3px_3px_6px_hsl(var(--neu-shadow-1)),_inset_-3px_-3px_6px_hsl(var(--neu-shadow-2))];
+}

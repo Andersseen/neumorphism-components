@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/neumorphic/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/neumorphic/card";
+import { Input } from "@/components/ui/neumorphic/input";
+import { CircleUser, Bell, Settings, Menu } from 'lucide-react';
+import { ThemeToggle } from "@/components/theme-toggle";
+import '@/styles/neumorphic.css';
+---
+
+<Layout title="Neumorphic UI Components">
+  <main class="min-h-screen bg-background p-8">
+    <ThemeToggle client:load />
+    <div class="max-w-4xl mx-auto space-y-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-4">Components</h1>
+        <p class="text-muted-foreground">Beautiful and reusable components built with Neumorphic design</p>
+      </div>
+
+      <!-- Rest of the components page content remains exactly the same -->
+      <!-- Buttons Section -->
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold mb-6">Buttons</h2>
+        
+        <div class="space-y-4">
+          <div class="flex flex-wrap gap-4">
+            <Button>Default Button</Button>
+            <Button variant="pressed">Pressed Button</Button>
+            <Button variant="ghost">Ghost Button</Button>
+            <Button variant="link">Link Button</Button>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <Button size="sm">Small</Button>
+            <Button>Default</Button>
+            <Button size="lg">Large</Button>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <Button size="icon">
+              <Bell className="h-4 w-4" />
+            </Button>
+            <Button size="icon" variant="pressed">
+              <Settings className="h-4 w-4" />
+            </Button>
+            <Button size="icon">
+              <Menu className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards Section -->
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold mb-6">Cards</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Account Overview</CardTitle>
+              <CardDescription>View your account details and settings</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div class="flex items-center space-x-4">
+                <div class="neu-flat-sm p-2 rounded-full">
+                  <CircleUser className="h-12 w-12 text-primary" />
+                </div>
+                <div>
+                  <p class="font-medium">John Doe</p>
+                  <p class="text-sm text-muted-foreground">john@example.com</p>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button variant="pressed">Edit Profile</Button>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Quick Actions</CardTitle>
+              <CardDescription>Frequently used actions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div class="grid grid-cols-2 gap-4">
+                <Button variant="pressed" className="w-full">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Settings
+                </Button>
+                <Button variant="pressed" className="w-full">
+                  <Bell className="mr-2 h-4 w-4" />
+                  Notifications
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <!-- Forms Section -->
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold mb-6">Form Elements</h2>
+        
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact Form</CardTitle>
+            <CardDescription>Send us a message</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label class="text-sm font-medium">First Name</label>
+                  <Input placeholder="John" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-medium">Last Name</label>
+                  <Input placeholder="Doe" />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium">Email</label>
+                <Input type="email" placeholder="john@example.com" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium">Message</label>
+                <div class="neu-pressed rounded-xl p-2">
+                  <textarea 
+                    class="w-full bg-transparent p-2 focus:outline-none" 
+                    rows="4"
+                    placeholder="Your message here..."
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button>Send Message</Button>
+          </CardFooter>
+        </Card>
+      </section>
+    </div>
+  </main>
+</Layout>
